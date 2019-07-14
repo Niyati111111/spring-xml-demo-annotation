@@ -13,6 +13,7 @@ public class Main {
         Movie movie1 = context.getBean("movieBean1", Movie.class);
         System.out.println(movie1.getActor());
 
+        context.registerShutdownHook();
 
     }
 }

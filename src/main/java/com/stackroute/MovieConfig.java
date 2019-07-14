@@ -1,5 +1,6 @@
 package com.stackroute;
 
+import com.stackroute.com.stackroute.demo.BeanLifeCycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +37,10 @@ public class MovieConfig {
         return new Movie(actorBean1());
     }
 
-
-
+    @Bean(initMethod="customInit", destroyMethod="customDestroy")
+    public BeanLifeCycleDemoBean getMyFileSystemBean() {
+        return new BeanLifeCycleDemoBean();
+    }
 
 
 }
